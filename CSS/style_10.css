@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div{
+    border: 5px solid green;
+    width: 400px;
+    margin: 100px auto;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+div > h1, div > p{
+    text-align: center;
+    color: blue;
+}
+
+/* Media query for different widths */
+
+@media screen and (max-width: 1200px){
+    div>h1, div>p{
+        color: red;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+}
+
+@media screen and (max-width: 992px){
+    div>h1, div>p{
+        color: pink;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+/* In max-width, the styles will apply to all screen sizes below the specified width. */
+/* when using max-width, always remember to put bigger widths first in the media queries and smaller widths later 
+otherwise the styles will not apply as expected. */
+
+/* vice verca for min-width, the styles will apply to all screen sizes above the specified width.
+And always remember to put smaller widths first in the media queries and bigger widths later */
+
+
+/* Media queries for orientation */
+
+/* in portrait mode, width is less than height */
+@media screen and (orientation: portrait){
+    div>h1{
+        font-size: 50px;
+        font-family: cursive;
+    }
+}
+
+/* in landscape mode, width is greater than height */
+@media screen and (orientation: landscape){
+    div>h1{
+        font-size: 30px;
+        font-family: monospace;
+    }
+}
+
+/* using or with media queries */
+@media screen and (max-width: 700px) , (orientation: landscape){
+    div>h1{
+        font-size: 40px;
+        color: green;
+    }
+}

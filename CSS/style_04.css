@@ -1,0 +1,12 @@
+h1{
+    background-color: rgb(255, 0, 0);
+}
+
+p{
+    background-color: rgba(0, 0, 255, 0.5);
+    /* a in rgba is alpha channel that controls the transparency */
+}
+
+div{
+    background-color: #00c8ff;
+}

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 40px auto;
+    border: 5px solid black;
+    transition-duration: 500ms; 
+    transition-property: background-color; /* Specify which properties to animate */
+    transition-delay: 1s; /* Delay before the transition starts */
+}
+
+.box:hover{
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.child{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+
+/* Transition timimg function */
+.parent:hover .child{
+    width: 100%;
+    transition-duration: 2s;
+}
+
+.child1{
+    transition-timing-function: linear;
+}
+
+.child1{
+    transition-timing-function: ease-in;
+}
+
+.child3{
+    transition-timing-function: ease-out;
+}
+
+.child4{
+    transition-timing-function: ease-in-out;
+}

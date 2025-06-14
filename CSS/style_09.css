@@ -1,0 +1,31 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border: 2px solid black;
+    transition-duration: 2s;
+    margin: 200px auto;
+}
+
+.transform:hover{
+    /* TRANSLATE */
+    /* transform: translateX(100px); */
+    /* transform: translateY(100px); */
+    /* transform: translate(100px, 100px); */
+
+    /* ROTATE */
+    /* transform: rotateX(45deg); */
+    /* transform: rotateY(45deg); */
+    /* transform: rotateZ(45deg);  */
+    /* transform: rotate(45deg); */
+
+    /* SCALE */
+    /* transform: scaleX(1.25); */
+    /* transform: scaleY(1.25); */
+    /* transform: scale(1.25); */
+
+    /* SKEW */
+    /* transform: skewX(25deg); */
+    /* transform: skewY(25deg); */
+    transform: skew(25deg, 25deg);
+}

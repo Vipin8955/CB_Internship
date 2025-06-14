@@ -1,0 +1,35 @@
+/* BASIC SELECTORS */
+
+/* Element selector */
+h1{
+    color: blue;
+    font-size: 30px;
+}
+
+/* ID selector */
+#b{
+    color: red;
+    font-size: 20px;
+}
+
+/* Class selector */
+.a{
+    color: green;
+    font-size: 25px;
+}
+
+/* Attribute selector */
+input[type="password"]{ 
+    background-color: rgb(183, 171, 249);
+    border: 1px solid black;
+}
+
+a[href="http://codingblocks.com"]{
+    color: orange;
+    font-size: 18px;
+}
+
+/* Universal selector */
+*{
+    border: 2px solid black;
+}

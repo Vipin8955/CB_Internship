@@ -1,0 +1,75 @@
+/* ADVANCED SELECTORS */
+/* 1. Combinators */
+
+/* Descendent selector */
+h1 span {
+  color: red;
+}
+/* section div h1 span{} */
+/* section h1 span{} */
+
+
+/* Child selector */
+h1 > span {
+  font-size: 40px;
+}
+
+/* Adjacent sibling */
+article + div {
+  border: 2px solid black;
+}
+
+/* General sibling */
+article ~ div {
+  background-color: lightblue;
+}
+
+/* 2. Pseudo classes */
+
+/* :hover */
+div:hover {
+  background-color: yellow;
+}
+
+/* :focus */
+input:focus {
+  background-color: #ff0000;
+}
+
+/* :active */
+a:active {
+    font-size: 50px;
+  background-color: #00ff00;
+}
+
+/* :visited */
+a:visited {
+  color: purple;
+}
+
+/* 3. Pseudo elements */
+
+/* ::first-letter */
+p::first-letter {
+  font-size: 50px;
+  color: blue;
+}
+
+/* ::first-line */
+p::first-line {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ::before */
+p::before {
+  content: "Starting of paragraph: ";
+  color: red;
+}
+
+/* ::after */
+p::after {
+  content: " - End of paragraph";
+  font-style: italic;
+  color: gray;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and their methods</title>
+</head>
+<body>
+    
+    <form action="#" method="GET">
+        <label for="firstName">Enter your first name</label>
+        <input type="text" name="first" id=""> <br>
+
+        <label for="lastName">Enter your last name</label>
+        <input type="text" name="last" id=""> <br>
+
+        <label for="password">Enter your password</label>
+        <input type="password" name="pass" id=""> <br>
+
+        <button>Submit</button>
+    </form>
+
+<!-- 
+| Feature       | GET                      | POST                   |
+| ------------- | ------------------------ | ---------------------- |
+| Data Location | URL query string         | HTTP body              |
+| Visibility    | Visible in URL           | Hidden from URL        |
+| Use For       | Fetching data            | Sending/modifying data |
+| Data Limit    | Limited (\~2KB)          | Larger payload allowed |
+| Bookmarkable  | ✅ Yes                    | ❌ No                   |
+| Secure?       | ❌ Not for sensitive data | ✅ Better with HTTPS    | 
+-->
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* 1. ABSOLUTE UNITS - These will be constant for any device or browser*/ 
+
+/* px */
+h1{
+    font-size: 25px;
+}
+
+/* in, cm, mm, pt */
+
+/* 2. RELATIVE UNITS - These can chnage according to condition*/
+
+/* % */
+div{
+    width: 100%;
+    background-color: lightblue;
+}
+
+/* em */
+ul > li{ /*Snowball effect*/
+
+    font-size: 2em; /* 2 times the parent element's font size */
+    /* font-size: 2rem; */
+}
+
+/* rem */
+p {
+    font-size: 2rem; /* 2 times the root element's font size */
+}
+
+/* vh & vw */
+section {
+    width: 50vw; /* 50% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
+    background-color: lightgreen;
+}

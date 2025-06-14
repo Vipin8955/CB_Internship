@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: 700px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row; /*This is the default value for flex-direction */
+    /* flex-direction: row-reverse; This will reverse the order of the flex items */
+    /* flex-direction: column; */ 
+    /* flex-direction: column-reverse; */
+    flex-wrap: wrap; /*This allows the flex items to wrap onto multiple lines if they exceed the width of the container*/
+    justify-content: center; /*This aligns the flex items along the main axis (horizontal by default)*/
+    align-items: center; /*This aligns the flex items along the cross axis (vertical by default)*/
+    /*align-content: center This aligns the flex lines within the flex container when there is extra space in the cross axis*/;
+}
+
+div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#three{
+    flex-grow: 2; /*This allows the third div to take up twice as much space as the others*/
+    flex-shrink: 2; /*This allows the third div to shrink twice as much as the others if there is not enough space*/
+}
+
+#four{
+    flex-grow: 1; /*This allows the fourth div to take up the same space as the first two*/
+    flex-shrink: 1; /*This allows the fourth div to shrink the same amount as the first two*/
+}
+
+#five{
+    align-self: flex-end; /*This overrides the align-items property for this specific item, aligning it to the end of the cross axis*/
+}

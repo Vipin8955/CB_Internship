@@ -1,0 +1,25 @@
+/* BOX MODEL - margin > border > padding > content */
+
+/* Block element */
+
+div{
+    height: 100px;
+    width: 100px;
+    background-color: lime;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 30px;
+}
+
+/* Inline element */
+/* box model properties are not applicable to inline elements */
+span{
+    height: 100px;
+    width: 100px;
+    background-color: lightcoral;
+    /* padding: 100px;
+    margin: 30px; */
+
+    /* display: inline-block; This makes the span behave like a block element, preserving its inline nature */
+
+}

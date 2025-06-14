@@ -1,0 +1,54 @@
+/* CSS position properties */
+
+/* 1. Static(default) */
+div {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+
+}
+
+#static #mid{
+    position: static;
+    top: 100px;
+    left: 100px;
+    /* top and left properties are ignored because position is static. 
+    Static is the default position. It is not positioned relative to anything. */
+}
+
+/* 2. Relative */
+#relative #mid{
+    position: relative;
+    top: 100px;
+    left: 50px;
+    /* top and left properties are relative to the element's normal position. */
+}
+
+/* 3. Absolute */
+#absolute #mid{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    /* top and left properties are relative to the nearest positioned ancestor. 
+    If there is no positioned ancestor, it is relative to the initial containing block. */
+}
+
+/* 4. Fixed */
+#fixed #mid{
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    /* top and left properties are relative to the viewport. 
+    The element will not move when the page is scrolled. */
+}
+
+/* 5. Sticky */
+#sticky {
+    height: 500px; /* To allow scrolling */
+}
+#sticky #mid{
+    position: sticky;
+    top: 100px;
+    /* top property is relative to the viewport until the element reaches a certain point in the scroll. 
+    After that, it behaves like a fixed element. */
+}

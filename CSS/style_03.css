@@ -1,0 +1,13 @@
+h1{
+    border: 2px solid green;
+    /* This style will be overridden by the inline style */
+}
+
+.external-h1{
+    border: 2px solid blue;
+}
+
+ul > li{
+    color: red; /*color property is inherited by all child*/
+    border: 2px solid black; /*this is not inherited by all*/
+}

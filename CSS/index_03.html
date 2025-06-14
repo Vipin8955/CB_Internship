@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity & Inheritence</title>
+    <link rel="stylesheet" href="style_03.css">
+
+    <style>
+        h1{
+            border: 5px dotted green;
+            /* This style will be overridden by the inline style */
+        }
+    </style>
+</head>
+<body>
+    <!-- Order of specificity -->
+    <!-- Inline > Internal > External -->
+    <!-- Inline > ID > class > element -->
+
+    <h1 style="border: 3px solid red;">H1 with inline CSS</h1>
+    <h1>H1 without inlice CSS</h1>
+    <h1 class="external-h1">H1 without inline and internal CSS</h1>
+    <br> <hr>
+
+    <h2>Inheritence</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2
+            <ol>
+                <li>Item 2.1</li>
+                <li>Item 2.2
+                    <ol>
+                        <li>Item 2.2.1</li>
+                        <li>Item 2.2.2</li>
+                    </ol>
+                </li>
+                <li>Item 2.3</li>
+            </ol>
+        </li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.style-one{
+    background-color: beige;
+    color: blue;
+}
+
+.style-two{
+    border: 2px solid black;
+    text-transform: uppercase
+}
+
+div{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    display: inline-block;
+}
