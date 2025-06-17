@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 40%;
+    width: 40%;
+   display: flex;
+   flex-direction: column;
+   justify-content:flex-start;
+   border: 2px solid gray;
+   box-shadow: 1px 1px 1px gray;
+   row-gap: 5%;
+}
+td{
+    text-align: center;
+}
+form{
+    text-align: center;
+    height: 30%;
+
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    color: white;
+    height: 30%;
+    
+}
