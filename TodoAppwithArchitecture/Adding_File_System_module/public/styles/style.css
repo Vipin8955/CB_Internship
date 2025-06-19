@@ -1,0 +1,49 @@
+li:first-child button.upbtn,
+li:last-child button.downbtn{
+    display: none;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000; /* fallback color */
+}
+
+.container {
+    height: 50%;
+    width: 60%;
+    border: 2px solid;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Important for ::before to work */
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../ai-generated-beautiful-rain-day-view-photo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px) brightness(80%); 
+    z-index: 0;
+}
+
+.container > * {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
