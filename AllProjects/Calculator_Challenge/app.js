@@ -18,9 +18,7 @@ app.post('/calculate',(req,res)=>{
         product: number1 * number2,
         divide: number2 !== 0 ? (number1 / number2).toFixed(2) : 'Infinity'
     };
-
     res.render('index', { result });
-    
 });
 
 app.listen(8000,(err)=>{

@@ -1,12 +1,12 @@
 const fs=require('fs');
 const Jimp=require('jimp');
-// let file=fs.readFileSync('image.png');
-// console.log(file);
-// let str=file.toString('base64');
-// console.log(str);
+let file=fs.readFileSync('image.png');
+console.log(file);
+let str=file.toString('base64');
+console.log(str);
 
 
-// fs.writeFileSync("img.txt",str);
+fs.writeFileSync("img.txt",str);
 
 str=fs.readFileSync('img.txt',{encoding:'utf-8'});
 let buffer=Buffer.from(str,'base64');
