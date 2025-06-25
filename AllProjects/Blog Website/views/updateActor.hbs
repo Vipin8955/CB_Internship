@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    {{> navbar}}
+    <div class="header">
+        <h1 class="actorsHeading">Actors-Update Details</h1>
+        <form class="actorsForm" action="update/actors" method="post">
+            <div class="nameBox">
+                <span class="nameText">Name:</span>
+                <input value="{{actor.name}}" class="name" name="name" placeholder="Enter Name">
+            </div>
+            <div class="actorBox">
+                <span class="actorImage">Actor Image Url:</span>
+                <input value="{{actor.imageUrl}}" class="actorImageUrl" name="actorImageUrl" placeholder="Enter Actor's Image Url">
+            </div>
+            <div class="ageBox">
+                <span class="ageText">Actor age:</span>
+                <input value="{{actor.age}}" class="actor" name="age" placeholder="Enter Actor's Age">
+            </div>
+            <input type="hidden" name="_id" value="{{actor._id}}">
+        <button class="submitBtn" type="submit">Update Details</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

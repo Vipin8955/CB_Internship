@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    {{> navbar}}
+    <div class="header">
+        <h1 class="actorsHeading">Actors-Details</h1>
+        <form class="actorsForm" action="/actors" method="post">
+            <div class="nameBox">
+                <span class="nameText">Name:</span>
+                <input class="name" name="name" placeholder="Enter Name">
+            </div>
+            <div class="actorBox">
+                <span class="actorImage">Actor Image Url:</span>
+                <input class="actorImageUrl" name="actorImageUrl" placeholder="Enter Actor's Image Url">
+            </div>
+            <div class="ageBox">
+                <span class="ageText">Actor age:</span>
+                <input class="actor" name="age" placeholder="Enter Actor's Age">
+            </div>
+        <button class="submitBtn" type="submit">Add Actor</button>
+        </form>
+    </div>
+
+     {{#if actors}}
+        <ul class="actorList">
+            {{#each actors as |actor|}}
+                <li class="actorItem">
+                    <div class="actorActor">
+                        <span class="actorActorText"><img alt="actor-image" src="{{actor.imageUrl}}" alt=""></span>
+                    </div>
+                    <div class="actorTitle">
+                        <span class="actorTitleHeading">Name:</span>
+                        <span class="actorTitletext">{{actor.name}}</span>
+                    </div>
+                    <div class="actorDescription">
+                        <span class="actorDescriptionHeading">Age:</span>
+                        <span class="actorDescriptionText">{{actor.age}}</span>
+                    </div>
+                    <button class="deleteBtn"><a href="/deleteactor?id={{actor._id}}">Delete</a></button>
+                    <button class="updateBtn"><a href="/update/actor?id={{actor._id}}">Update</a></button>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    
+</body>
+</html>
+
+
+
+
+
+
+

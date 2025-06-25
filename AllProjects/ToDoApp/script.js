@@ -18,6 +18,7 @@ add_btn.click(function(){
     {
         let new_div=task.clone();
         new_div.find('.task_display').text(input_area.val());
+        localStorage.setItem('task',new_div.val());
         display_area.append(new_div);
         new_div.removeClass('hidden');
         input_area.val('');

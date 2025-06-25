@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   {{> navbar}}
+
+   <div class="header">
+     <h1 class="blogsHeading">Blogs Site</h1>
+    <form class="blogsForm" action="/blogs" method="post">
+    <div class="titleBox">
+        <span class="titleText">Title:</span>
+        <input class="title" required="true" type="text" placeholder="Enter title" name="title">
+    </div>
+    
+    <div class="actorBox">
+        <span class="actorText">Actor:</span>
+        {{!-- <input class="actor" required="true" type="text" placeholder="Enter actor" name="actor"> --}}
+        <select class="actor" name="actor">
+        {{#each actors as |actor|}}
+        <option value="{{actor._id}}">{{actor.name}}</option>
+        {{/each}}
+        </select>
+    </div>
+
+    <div class="descriptionBox">
+        <span class="descriptionText">Description:</span>
+        <textarea class="description" rows="5" required="true" placeholder="Enter description" name="description"></textarea>
+    </div>
+    <button class="submitBtn" type="submit">Add Blog</button>
+    </form>
+   </div>
+    {{#if blogs}}
+        <ul class="blogsList">
+            {{#each blogs as |blog|}}
+                <li class="blogItem">
+                    <div class="blogTitle">
+                        <span class="blogTitleHeading">Title:</span>
+                        <span class="blogTitletext">{{blog.title}}</span>
+                    </div>
+                    <div class="blogActor">
+                        <span class="blogActorHeading">Actor:</span>
+                        <span class="blogActorText">{{blog.actor.name}}</span>
+                    </div>
+                    <div class="blogDescription">
+                        <span class="blogDescriptionHeading">Description:</span>
+                        <span class="blogDescriptionText">{{blog.description}}</span>
+                    </div>
+                    <button class="deleteBtn"><a href="/delete?id={{blog._id}}">Delete</a></button>
+                    <button class="updateBtn"><a href="/update?id={{blog._id}}">Update</a></button>
+                    <button class="detailsBtn"><a href="/details?id={{blog._id}}">Details</a></button>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    
+</body>
+</html>
