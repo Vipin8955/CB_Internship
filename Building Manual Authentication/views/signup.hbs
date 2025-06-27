@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body>
+    <h1>Welcome to SignUp Page</h1>
+    {{#if msg}}
+        <div class="flashMessage">
+            {{msg}}
+        </div>
+    {{/if}}
+    <form method="post" action="/signup">
+        <input type="text" name="name" placeholder="Enter full name">
+        <input type="text" name="password" placeholder="Enter password">
+    <button type="submit">SignUp</button>
+    </form>
+    <div>
+        Already a User?login
+        <button><a href="/login">Login</a></button>
+    </div>
+</body>
+</html>
