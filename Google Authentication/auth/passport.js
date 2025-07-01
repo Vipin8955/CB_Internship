@@ -31,8 +31,8 @@ passport.deserializeUser(async function(id,done){
 
 //FaceBook
 passport.use(new FacebookStrategy({
-    clientID:"835000547966494",
-    clientSecret:"ba5aa3005cac7afae53bde27be1f994a",
+    clientID:process.env.CLIENT_ID,
+    clientSecret:process.env.CLIENT_SECRET,
     callbackURL:"http://localhost:8000/login/auth/facebook/callback"
 },async function(accessToken,refreshtoken,profile,cb){
     // User.findOrCreate({facebookId:profile.id},function(err,user){
