@@ -1,0 +1,43 @@
+.carscontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.carBox {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carimg {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #ddd;
+}
+.carinfo {
+    padding: 15px;
+}
+
+.carinfo table {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+.carinfo td {
+    padding: 5px 8px;
+    vertical-align: top;
+    word-break: break-word;
+}
+.bookBtn{
+    font-size: 24px;
+}

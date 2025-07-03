@@ -1,0 +1,22 @@
+{
+  "name": "sortify",
+  "version": "1.0.0",
+  "description": "admin se koi page render karte waqt hi isAdmin:true bheja gaya\r hai ab har jagah partial use karte waqt we are creating a key\r isAdmin =isAdmin and initialising it with the value passed \r from the admin isAdmin=true hua to if wali condition chalegi\r or admin options visible honge nmavbar mai",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.1.0",
+    "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0"
+  }
+}

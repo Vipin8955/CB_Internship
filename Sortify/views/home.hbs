@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortify Car Rentals</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h4>Plan Your Trip Now</h4>
+                <h1>EXPLORE THE WORLD WITH US</h1>
+                <div class="herofunctions">
+                    <a href="car.html" class="btn-book">Book A Ride →</a>
+                    <p>Or</p>
+                    <img class="playbtn" src="/images/play.png" onclick="playVideo()" style="cursor:pointer;">
+                    <div id="videoContainer" style="position: relative;"></div>
+
+                </div>
+                <h4>What's New-----------------------------------------------------------</h4>
+                <p>Now You Can Rent A Car With The Various Facilities And Conveniences We Provide.</p>
+            </div>
+            <div class="hero-image">
+                <img src="/images/img1.jpg">
+            </div>
+        </section>
+    </div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat">
+            <p>Cars Rented</p>
+            <h2>240</h2>
+        </div>
+        <div class="stat">
+            <p>Satisfied Clients</p>
+            <h2>235</h2>
+        </div>
+        <div class="stat">
+            <p>Years Experience</p>
+            <h2>12+</h2>
+        </div>
+        <div class="stat">
+            <p>Car Types</p>
+            <h2>18</h2>
+        </div>
+    </section>
+    <button class="logoutBtn">
+        <a href="/logout">Logout</a>
+    </button>
+   <script>
+  function playVideo() {
+    const videoContainer = document.getElementById('videoContainer');
+    videoContainer.innerHTML = `
+      <button onclick="closeVideo()" style="
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          background: red;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          font-size: 16px;
+        ">✖</button>
+      <video width="640" height="360" controls autoplay style="margin-top: 10px;">
+        <source src="/images/aa.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    `;
+  }
+
+  function closeVideo() {
+    const videoContainer = document.getElementById('videoContainer');
+    videoContainer.innerHTML = '';
+  }
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vehicle</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/addvehicle.css">
+</head>
+
+<body>
+    {{> navbar}}
+
+    <div class="container">
+        <form action="/admin/addvehicle" method="POST">
+            <div class="productBox">
+                <div class="productBoxItem">
+                    <label class="title" for="name">Name:</label>
+                    <input class="inputElement" type="text" id="name" name="name" placeholder="Enter Name">
+                </div>
+
+                <div class="productBoxItem">
+                    <label class="title" for="price">Price:</label>
+                    <input class="inputElement" type="text" id="price" name="price" placeholder="Enter Price">
+                </div>
+
+                <div class="productBoxItem">
+                    <label class="title" for="img">Image URL:</label>
+                    <input class="inputElement" type="text" id="img" name="imageUrl" placeholder="Enter Image URL">
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="available">Available:</label>
+                    <input type="checkbox" class="inputElement checkbox" id="available" name="available">
+                </div>
+
+                <div class="productBoxItem descriptionFlex">
+                    <label class="title" for="descriptionInp">Description:</label>
+                    <div class="descriptionBox">
+                        <input type="text" id="descriptionInp" placeholder="Enter details" >
+                        <button class="descriptionBtn">Add</button>
+                        <div class="descriptionList"></div>
+                    </div>
+                </div>
+
+                <div class="productBtn">
+                    <button type="submit">Add Vehicle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const descriptionBtn = document.querySelector('.descriptionBtn');
+        const descriptionInp = document.querySelector('#descriptionInp');
+        const descriptionList = document.querySelector('.descriptionList');
+
+        descriptionBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const value = descriptionInp.value.trim();
+            if (!value) return;
+
+            const textarea = document.createElement('textarea');
+            textarea.classList.add('inputElement', 'details');
+            textarea.setAttribute('name', 'details');
+            textarea.value = value;
+            descriptionList.appendChild(textarea);
+            descriptionInp.value = '';
+        });
+    </script>
+</body>
+
+</html>

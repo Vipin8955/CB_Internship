@@ -1,0 +1,95 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+}
+
+.productBox {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.productBoxItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    border: 1px solid black;
+    padding: 10px;
+    gap: 15px;
+}
+
+.title {
+    font-size: 20px;
+    flex: 1;
+}
+
+.inputElement {
+    font-size: 18px;
+    padding: 5px;
+    flex: 2;
+    border-radius: 5px;
+}
+
+.descriptionBox {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 10px;
+}
+
+.descriptionBox input {
+    font-size: 18px;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.descriptionBtn {
+    font-size: 18px;
+    padding: 5px;
+    background-color: rgb(79, 0, 110);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    /* background-color: red; */
+}
+.checkbox {
+    width: auto;
+    transform: scale(1.5); /* makes it more visible */
+    margin-left: auto;
+}
+.descriptionBtn:hover {
+    background-color: rgb(99, 0, 140);
+}
+
+.descriptionList textarea {
+    width: 100%;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.productBtn {
+    width: 100%;
+  
+}
+
+.productBtn button {
+    width: 100%;
+    font-size: 20px;
+    background-color: rgb(79, 0, 110);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.productBtn button:hover {
+    background-color: rgb(99, 0, 140);
+}

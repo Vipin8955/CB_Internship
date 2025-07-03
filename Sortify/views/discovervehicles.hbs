@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/discovervehicles.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="carscontainer">
+            {{#each vehicles}}
+            <div class="carBox">
+                <div class="carimg" style="background-image: url('{{this.imageUrl}}');"></div>
+                <div class="carinfo">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>{{this.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td>{{this.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Details:</td>
+                            <td>
+                                {{#if this.details}}
+                                {{#each this.details}}<div>{{this}}</div>{{/each}}
+                                {{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Available:</td>
+                            <td>{{#if this.available}}Yes{{else}}No{{/if}}</td>
+                        </tr>
+                    </table>
+                    <button class="bookBtn">Book now</button>
+                    <input class="availability" type="hidden" value="{{this.available}}">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <script>
+       let carBoxes=document.querySelectorAll('.carBox');
+       carBoxes.forEach((carBox)=>{
+        let availability=carBox.querySelector('.availability');
+        let bookBtn=carBox.querySelector('.bookBtn');
+        if(availability.value==='true')
+        bookBtn.style.color="green";
+        else
+        bookBtn.style.color="red";       
+       });
+
+    </script>
+</body>
+
+</html>
