@@ -14,9 +14,9 @@
             <a href="/about" class="navLink">About Us</a>
             <a href="/vehicles" class="navLink">Vehicles</a>
             <a href="" class="navLink">Contact Us</a>
-            <a href="/admin/addvehicle" class="navLink">Add Car</a>
-          
-            
+            {{#if isAdmin}}
+                <a href="/admin/addvehicle" class="navLink">Add Car</a>
+            {{/if}}  
         </div>
     </nav>
 </body>

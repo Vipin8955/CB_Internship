@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/discovervehicles.css">
+    <link rel="stylesheet" href="/booknow.css">
+    <link rel="stylesheet" href="/addvehicle.css">
+</head>
+
+<body>
+    {{>navbar isAdmin=isAdmin}}
+    <div class="container" id="carCard">
+        <div class="carBox">
+            <div class="carimg" style="background-image: url('{{vehicle.imageUrl}}');"></div>
+            <div class="carinfo">
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td>{{vehicle.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Price:</td>
+                        <td>{{vehicle.price}} Rs./hour</td>
+                    </tr>
+                    <tr>
+                        <td>Details:</td>
+                        <td>
+                            {{#if vehicle.details}}
+                            {{#each vehicle.details}}
+                            <div>{{this}}</div>
+                            {{/each}}
+                            {{/if}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Available:</td>
+                        <td>{{#if vehicle.available}}Yes{{else}}No{{/if}}</td>
+                    </tr>
+                </table>
+                <button class="bookBtn"><a href="/booknow?id={{vehicle._id}}">Book now</a></button>
+                <input class="availability" type="hidden" value="{{vehicle.available}}">
+            </div>
+        </div>
+    </div>
+    <div class="container booknowform">
+        <form action="" method="POST">
+            <div class="productBox">
+                <div class="productBoxItem">
+                    <label class="title" for="name">Full Name:</label>
+                    <input class="inputElement" type="text" id="fullname" name="fullname" placeholder="Enter full name" required="true">
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="name">Email:</label>
+                    <input class="inputElement" type="email" id="email" name="email" placeholder="Enter email" required="true">
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="name">Mobile Number:</label>
+                    <input class="inputElement" type="tel" id="mobilenumber" name="mobilenumber" placeholder="Enter mobile number" required="true">
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="name">Pickup Date:</label>
+                    <input class="inputElement" type="date" id="pickupdate" name="pickupdate" placeholder="Enter the date when you want the car" required="true">
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="price">Pickup Time:</label>
+                    <input class="inputElement" type="time" id="pickuptime" name="pickuptime" placeholder="Enter time" required="true">
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="price">Dropoff Time:</label>
+                    <input class="inputElement" type="time" id="dropofftime" name="dropofftime" placeholder="Enter time" required="true">
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="price">Total Price:</label>
+                    <input class="inputElement" type="number" id="totalprice" name="totalprice">
+                </div>
+                 <div class="productBtn">
+                    <button id="priceBtn">Total Price</button>
+                </div>
+                <div class="productBtn">
+                    <button id="addBtn" type="submit"><a href="/bookingsucessful?id={{vehicle._id}}">Pay Now</a></button>
+                </div>
+               
+                <input class="inputElement" type="hidden" id="totalHours" name="totalHours">
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        let totalhours=document.querySelector('#totalHours');
+        let bookBtn=document.querySelector('.bookBtn');
+        let priceBtn=document.querySelector('#priceBtn');
+        let booknowform=document.querySelector('.booknowform');
+        let carCard=document.querySelector('#carCard');
+        bookBtn.addEventListener('click',(event)=>{
+            event.preventDefault();
+            carCard.style.display="none";
+            booknowform.style.display="block";
+        })
+
+
+
+
+        let btn=document.querySelector('#addBtn');
+        let totalprice=document.querySelector('#totalprice');
+        let priceperhour={{vehicle.price}};
+        btn.addEventListener('click',calculateDuration);
+        function calculateDuration(event){
+            event.preventDefault();
+            let pickuptime = document.querySelector('#pickuptime').value;
+            let dropofftime = document.querySelector('#dropofftime').value;
+            if (!pickuptime || !dropofftime) return;
+            const [fromHour, fromMinute] = pickuptime.split(':').map(Number);
+            const [toHour, toMinute] = dropofftime.split(':').map(Number);
+            const fromMinutes = fromHour * 60 + fromMinute;
+            const toMinutes = toHour * 60 + toMinute;
+            let duration = toMinutes - fromMinutes;
+            if (duration < 0) duration += 24 * 60;
+            const hours = Math.floor(duration / 60);
+            const minutes = duration % 60;
+            const totalhours=hours+(minutes/60);
+            totalprice.value=totalhours*priceperhour;
+            totalHours.value=totalhours;
+        }
+    </script>
+</body>
+
+</html>

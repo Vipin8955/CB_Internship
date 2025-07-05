@@ -1,3 +1,15 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
 .about-us {
     display: flex;
     align-items: center;
@@ -43,22 +55,14 @@
     color:rgb(46, 43, 43);
     margin-left: 5px;
 }
-/* .feature img {
-    height: auto;
-    margin-bottom: 10px;
-}
-.feature2 img {
-    height: auto;
-    margin-bottom: 10px;
-} */
+
 .feature p {
     font-size: 20px;
     color:orange;
     margin-left: 5px;
 }
-
 .about-image img {
-    width: 350px;
+    width: 400px;
     height: auto;
     border-radius: 10px;
 }

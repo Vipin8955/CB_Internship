@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {{>navbar}}
+    {{>navbar isAdmin=isAdmin}}
     <div class="container">
         <div class="carscontainer">
             {{#each vehicles}}
@@ -24,7 +24,7 @@
                         </tr>
                         <tr>
                             <td>Price:</td>
-                            <td>{{this.price}}</td>
+                            <td>{{this.price}} Rs./hour</td>
                         </tr>
                         <tr>
                             <td>Details:</td>
@@ -39,24 +39,38 @@
                             <td>{{#if this.available}}Yes{{else}}No{{/if}}</td>
                         </tr>
                     </table>
-                    <button class="bookBtn">Book now</button>
+                    {{#unless ../isAdmin}}
+                    <button class="bookBtn"><a href="/booknow?id={{this._id}}">Book now</a></button>
+                    {{/unless}}
+                    {{#if ../isAdmin}}
+                    <div class="buttons">
+                        <button class="bookBtn"><a href="/booknow?id={{this._id}}">Book now</a></button>
+                        <div class="adminbuttons">
+                            <button class="deleteCarBtn"><a href="/admin/deletecar?id={{this._id}}">Delete</a></button>
+                            <button class="editCarBtn"><a href="/admin/editcar?id={{this._id}}">Edit</a></button>
+                        </div>
+                    </div>
+                    {{/if}}
                     <input class="availability" type="hidden" value="{{this.available}}">
                 </div>
             </div>
             {{/each}}
         </div>
     </div>
+    <button class="logoutBtn">
+        <a href="/logout">Logout</a>
+    </button>
     <script>
-       let carBoxes=document.querySelectorAll('.carBox');
-       carBoxes.forEach((carBox)=>{
-        let availability=carBox.querySelector('.availability');
-        let bookBtn=carBox.querySelector('.bookBtn');
-        if(availability.value==='true')
-        bookBtn.style.color="green";
-        else
-        bookBtn.style.color="red";       
-       });
-
+        let carBoxes = document.querySelectorAll('.carBox');
+        let editCarBtn = document.querySelector('.editCarBtn');
+        carBoxes.forEach((carBox) => {
+            let availability = carBox.querySelector('.availability');
+            let bookBtn = carBox.querySelector('.bookBtn a');
+            if (availability.value === 'true')
+                bookBtn.style.color = "green";
+            else
+                bookBtn.style.color = "red";
+        });
     </script>
 </body>
 

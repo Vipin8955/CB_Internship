@@ -6,7 +6,7 @@ const { handleGetLogin } = require('../controllers/login');
 router.get('/',handleGetLogin);
 router.post('/',myPassport.authenticate('local',{failureRedirect:'/login'}),
     function(req,res){
-        res.render('profile',{isAdmin:req.user.isAdmin});
+       res.redirect('/profile');
     });
 router.get('/facebook',myPassport.authenticate('facebook'));
 router.get('/auth/facebook/callback',

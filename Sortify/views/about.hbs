@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="about.css">
+    
 </head>
 
 <body>
-    {{>navbar}}
+    {{>navbar isAdmin=isAdmin}}
     <div class="container">
         <section class="about-us">
             <div class="about-text">
@@ -58,6 +59,9 @@
                 <p><strong>Signature</strong><br><span class="sign">Doraemon</span></p>
             </div>
         </div>
+        <button class="logoutBtn">
+           <a href="/logout">Logout</a>
+        </button>
 </body>
 
 </html>

@@ -27,6 +27,8 @@ app.use(passport.session());
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
 
+const staticRouter=require('./routes/staticRouter');
+const Vehicle = require('./models/vehicle');
 app.get('/',(req,res)=>{
   res.redirect('/login');
 })
@@ -40,19 +42,26 @@ app.get('/logout',function(req,res,next){
 })
 app.use('/profile',require('./routes/profileRouter'));
 app.get('/home',(req,res)=>{
-    res.render('home');
+  res.render('home',{isAdmin:req.user.isAdmin});
 })
 app.get('/about',(req,res)=>{
-  res.render('about');
+  res.render('about',{isAdmin:req.user.isAdmin});
 })
 app.get('/vehicles',(req,res)=>{
-  res.render('vehicles');
+  res.render('vehicles',{isAdmin:req.user.isAdmin});
 })
 app.get('/addvehicle',(req,res)=>{
-  res.render('addvehicle');
+  res.render('addvehicle',{isAdmin:req.user.isAdmin});
 })
 app.use('/discovervehicles',require('./routes/staticRouter'));
-
+app.get('/booknow',async (req,res)=>{
+  const id=req.query.id;
+  const vehicle=await Vehicle.findById({_id:id});
+  res.render('booknow',{
+    isAdmin:req.user.isAdmin,vehicle
+  });
+})
+app.get('/bookingsuccessful',require('./routes/bookingRouter.js'));
 app.use('/admin',require('./routes/adminRouter'));
 mongoose.connect(process.env.DB_PATH).then(()=>{
   app.listen(process.env.PORT,()=>{

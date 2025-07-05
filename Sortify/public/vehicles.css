@@ -7,6 +7,13 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
 }
 .car-list {
     padding: 50px 0;
@@ -16,7 +23,7 @@ body {
     font-size: 32px;
     margin-bottom: 20px;
 }
-.discover-button {
+.discoverBtn{
     display: inline-block;
     background-color: #ff6a00;
     color: white;
@@ -25,6 +32,11 @@ body {
     text-decoration: none;
     margin-bottom: 40px;
     font-weight: bold;
+}
+.discoverBtn a{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
 }
 .cars {
     display: flex;
@@ -133,5 +145,8 @@ body {
     object-fit: cover;     
     border-radius: 10px;   
 }
+
+
+
 
 

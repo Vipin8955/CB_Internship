@@ -4,53 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Vehicle</title>
+    <title>Document</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/addvehicle.css">
 </head>
-<body>
-    {{> navbar isAdmin=isAdmin}}
 
+<body>
+    {{>navbar isAdmin:isAdmin}}
     <div class="container">
-        <form action="/admin/addvehicle" method="POST">
+        <form action="/admin/editcar" method="POST">
             <div class="productBox">
                 <div class="productBoxItem">
                     <label class="title" for="name">Name:</label>
-                    <input class="inputElement" type="text" id="name" name="name" placeholder="Enter Name">
+                    <input value="{{vehicle.name}}" class="inputElement" type="text" id="name" name="name"
+                        placeholder="Enter Name">
                 </div>
 
                 <div class="productBoxItem">
                     <label class="title" for="price">Price:</label>
-                    <input class="inputElement" type="text" id="price" name="price" placeholder="Enter Price">
+                    <input value="{{vehicle.price}}" class="inputElement" type="text" id="price" name="price"
+                        placeholder="Enter Price">
                 </div>
 
                 <div class="productBoxItem">
                     <label class="title" for="img">Image URL:</label>
-                    <input class="inputElement" type="text" id="img" name="imageUrl" placeholder="Enter Image URL">
+                    <input value="{{vehicle.imageUrl}}" class="inputElement" type="text" id="img" name="imageUrl"
+                        placeholder="Enter Image URL">
                 </div>
+
                 <div class="productBoxItem">
                     <label class="title" for="available">Available:</label>
-                    <input type="checkbox" class="inputElement checkbox" id="available" name="available">
+                    <input {{#if vehicle.available}} checked {{/if}} type="checkbox" class="inputElement checkbox"
+                        id="available" name="available">
                 </div>
 
-                <div class="productBoxItem descriptionFlex">
-                    <label class="title" for="descriptionInp">Description:</label>
-                    <div class="descriptionBox">
-                        <input type="text" id="descriptionInp" placeholder="Enter details" >
-                        <button class="descriptionBtn">Add</button>
-                        <div class="descriptionList"></div>
+
+
+
+                <div class="descriptionBox">
+                    <input type="text" id="descriptionInp" placeholder="Enter details">
+                    <button class="descriptionBtn">Add</button>
+                    <div class="descriptionList">
+                        {{#each vehicle.details}}
+                        <textarea name="details" class="inputElement details">{{this}}</textarea>
+                        {{/each}}
                     </div>
                 </div>
-
+                <input type="hidden" name="id" value="{{vehicle._id}}">
                 <div class="productBtn">
-                    <button type="submit">Add Vehicle</button>
+                    <button type="submit">Update</button>
                 </div>
             </div>
         </form>
     </div>
-<button class="logoutBtn">
-        <a href="/logout">Logout</a>
- </button>
     <script>
         const descriptionBtn = document.querySelector('.descriptionBtn');
         const descriptionInp = document.querySelector('#descriptionInp');

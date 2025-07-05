@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {{>navbar}}
+    {{>navbar isAdmin=isAdmin}}
     <div class="container">
         <section class="hero">
             <div class="hero-text">
@@ -31,8 +31,8 @@
             </div>
         </section>
     </div>
-    <!-- Stats Section -->
-    <section class="stats">
+   {{#if isAdmin}}
+     <section class="stats">
         <div class="stat">
             <p>Cars Rented</p>
             <h2>240</h2>
@@ -50,6 +50,7 @@
             <h2>18</h2>
         </div>
     </section>
+   {{/if}}
     <button class="logoutBtn">
         <a href="/logout">Logout</a>
     </button>
@@ -72,7 +73,6 @@
         ">✖</button>
       <video width="640" height="360" controls autoplay style="margin-top: 10px;">
         <source src="/images/aa.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
     `;
   }

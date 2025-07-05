@@ -7,7 +7,7 @@ router.get('/',(req,res,next)=>{
     if(!req.user)
         return res.redirect('/login');
     res.render('profile',{
-        name:req.user.username,
+        name:req.user.username,isAdmin:req.user.isAdmin
     })
 });
 
