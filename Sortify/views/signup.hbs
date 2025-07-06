@@ -15,7 +15,6 @@
   {{/if}}
 
   <h1 class="signupHeading">Welcome to SignUp Page</h1>
-
   <div class="signup">
     <div class="signupItem navItem1">
     
@@ -25,8 +24,8 @@
       <div class="signupOptions">
         <form class="signupForm" method="post" action="/signup">
           <div class="signupCreds">
-            <input class="signupUsername" type="text" name="name" placeholder="Enter full name"/>
-            <input class="signupPassword" type="text" name="password" placeholder="Enter password"/>
+            <input class="signupUsername" type="text" name="name" placeholder="Enter full name" required/>
+            <input class="signupPassword" type="text" name="password" placeholder="Enter password" required/>
             <button class="signupBtn" type="submit">SignUp</button>
           </div>
         </form>

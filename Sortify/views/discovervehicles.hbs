@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/discovervehicles.css">
 </head>
-
 <body>
     {{>navbar isAdmin=isAdmin}}
     <div class="container">
@@ -62,14 +59,17 @@
     </button>
     <script>
         let carBoxes = document.querySelectorAll('.carBox');
-        let editCarBtn = document.querySelector('.editCarBtn');
         carBoxes.forEach((carBox) => {
             let availability = carBox.querySelector('.availability');
             let bookBtn = carBox.querySelector('.bookBtn a');
             if (availability.value === 'true')
                 bookBtn.style.color = "green";
             else
+            {
                 bookBtn.style.color = "red";
+                bookBtn.style.pointerEvents="none";
+            }
+               
         });
     </script>
 </body>

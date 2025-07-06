@@ -8,6 +8,7 @@ const flash=require('connect-flash');
 const passport=require('./auth/passport');
 const mongoStore=require('connect-mongo');
 const hbs=require('hbs');
+const Vehicle=require('./models/vehicle.js');
 
 app.use(flash());
 app.set('view engine','hbs');
@@ -26,9 +27,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
-
 const staticRouter=require('./routes/staticRouter');
-const Vehicle = require('./models/vehicle');
+// const Vehicle = require('./models/vehicle');
 app.get('/',(req,res)=>{
   res.redirect('/login');
 })
@@ -61,7 +61,7 @@ app.get('/booknow',async (req,res)=>{
     isAdmin:req.user.isAdmin,vehicle
   });
 })
-app.get('/bookingsuccessful',require('./routes/bookingRouter.js'));
+app.use('/booking',require('./routes/bookingRouter.js'));
 app.use('/admin',require('./routes/adminRouter'));
 mongoose.connect(process.env.DB_PATH).then(()=>{
   app.listen(process.env.PORT,()=>{

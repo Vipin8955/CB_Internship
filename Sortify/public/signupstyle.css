@@ -13,18 +13,15 @@
     display: flex;
     width: 800px;
     margin: 200px auto;
-    /* border: 1px solid black; */
     align-items: center;
 }
 
 .signupItem {
     width: 50%;
-    /* border: 1px solid green; */
 }
 
 .signupBtn {
     background-color: #1877f2;
-    border-radius: 1px;
     border: 0px;
     color: white;
     width: 100%;
@@ -32,7 +29,6 @@
 
 .loginBtn {
     background-color: #42b72a;
-    border-radius: 1px;
     border: 0px;
     color: white;
     width: 70%;
@@ -71,7 +67,6 @@
 
 .signupForm,
 .login {
-    /* border: 1px solid black; */
     height: 50%;
 }
 
@@ -81,19 +76,12 @@
 
 .signupForm {
     display: flex;
-    /* border: 1px solid red; */
     align-items: center;
     justify-content: center;
 }
 
 .signupCreds {
     width: 300px;
-}
-
-.navItem1 {
-    background-image: url('https://media.istockphoto.com/id/1184670036/');
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .navItem1,

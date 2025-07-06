@@ -1,4 +1,6 @@
 const mongoose=require('mongoose');
+const Vehicle=require('../models/vehicle');
+const User=require('../models/user');
 const bookingSchema= new mongoose.Schema({
   fullname:{
     type:String,
@@ -9,21 +11,21 @@ const bookingSchema= new mongoose.Schema({
     required:true
   },
   mobilenumber:{
-    type:Number,
+    type:String,
     required:true
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'user',
     required: true
   },
   vehicleId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Vehicle',
+    ref: 'vehicle',
     required: true
   },
   pickupdate: {
-    type: Date,
+    type: String,
     required: true
   },
   pickuptime: {

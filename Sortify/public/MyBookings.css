@@ -1,22 +1,33 @@
-.carscontainer {
+.container{
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
 }
-
+.userBox {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 400px; */
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 550px;
+    padding-top: 10px;
+    min-width:450px;
+}
+.userBox h2{
+    text-align: center;
+}
 .carBox {
     display: flex;
     flex-direction: column;
     width: 400px;
     background-color: #f4f4f4;
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     height: 550px;
     overflow: hidden;
 }
-
 .carimg {
     width: 100%;
     height: 190px;
@@ -24,7 +35,7 @@
     background-position: center;
     border-bottom: 1px solid #ddd;
 }
-.carinfo {
+.bookinginfo {
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -32,7 +43,7 @@
     flex-grow: 1;
 }
 
-.carinfo table {
+.cbookinginfo table {
     width: 100%;
     font-size: 14px;
     border-collapse: collapse;
@@ -40,7 +51,7 @@
     margin-bottom: 10px;
 }
 
-.carinfo td {
+.bookinginfo td {
     padding: 5px 8px;
     vertical-align: top;
     word-break: break-word;
@@ -56,24 +67,15 @@ td:nth-child(2){
     font-weight: 500;
     font-size: large;
 }
-.editCarBtn,.deleteCarBtn{
-    font-size: 24px;
-    padding: 0px 10px;
-}
-.editCarBtn a{
-    text-decoration: none;
-    color: rgb(55, 55, 223);
-}
-.deleteCarBtn a{
-    text-decoration: none;
-    color: red;
-}
-.buttons{
-    display: flex;
-    justify-content: space-between;
 
-    margin-top: auto;
+.eachBooking{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    width: 80%;
+    border: 2px solid gray;
+    border-radius: 10px;
 }
-.bookBtn a{
-    text-decoration: none;
+td{
+    white-space:nowrap;
 }

@@ -41,8 +41,8 @@
 }
 .logoutBtn {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 35px;
+  right: 5px;
   background-color: #dc3545;
   border: none;
   padding: 5px 7px;

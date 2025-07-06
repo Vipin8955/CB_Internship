@@ -14,7 +14,7 @@ passport.use(new LocalStrategy({usernameField:'name',passwordField:'password'},
         }catch(err){
             return done(err)
         }
-        }));
+}));
 passport.serializeUser( function(user,done){
     done(null,user.id);
 })
@@ -76,7 +76,7 @@ passport.use(new GoogleStrategy({
 
     try{
         let user=await User.findOne({
-            fbId:profile.id
+            googleId:profile.id
         });
         if(user) return cb(null,user);
         user=await User.create({

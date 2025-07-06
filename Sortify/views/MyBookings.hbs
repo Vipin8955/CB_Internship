@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/MyBookings.css">
+</head>
+
+<body>
+    {{>navbar isAdmin=isAdmin}}
+    <div class="container" id="carCard">
+        {{#unless bookings}}
+         <h1>No Bookings Yet</h1>
+        {{/unless}}
+        {{#each bookings as |booking|}}
+        <div class="eachBooking">
+            <div class="carBox">
+                <div class="carimg" style="background-image: url('{{booking.vehicleId.imageUrl}}');"></div>
+                <div class="bookinginfo">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>{{booking.vehicleId.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td>{{booking.vehicleId.price}} Rs./hour</td>
+                        </tr>
+                        <tr>
+                            <td>Details:</td>
+                            <td>
+                                {{#if booking.vehicleId.details}}
+                                {{#each booking.vehicleId.details}}
+                                <div>{{this}}</div>
+                                {{/each}}
+                                {{/if}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="userBox">
+                <H2>Booking Details</H2>
+                <div class="bookinginfo">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>{{booking.fullname}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>{{booking.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>MobileNumber:</td>
+                            <td>{{booking.mobilenumber}}</td>
+                        </tr>
+                        <tr>
+                            <td>pickupdate:</td>
+                            <td>{{booking.pickupdate}}</td>
+                        </tr>
+                        <tr>
+                            <td>pickuptime:</td>
+                            <td>{{booking.pickuptime}} </td>
+                        </tr>
+                        <tr>
+                            <td>dropofftime:</td>
+                            <td>{{booking.dropofftime}} </td>
+                        </tr>
+                        <tr>
+                            <td>TotalHours:</td>
+                            <td>{{booking.totalHours}} </td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td>{{booking.totalPrice}} Rs.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <button class="logoutBtn">
+        <a href="/logout">Logout</a>
+    </button>
+</body>
+
+</html>

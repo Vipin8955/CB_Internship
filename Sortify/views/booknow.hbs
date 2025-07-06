@@ -47,68 +47,73 @@
         </div>
     </div>
     <div class="container booknowform">
-        <form action="" method="POST">
+        <form action="/booking" method="POST">
             <div class="productBox">
                 <div class="productBoxItem">
                     <label class="title" for="name">Full Name:</label>
-                    <input class="inputElement" type="text" id="fullname" name="fullname" placeholder="Enter full name" required="true">
+                    <input class="inputElement" type="text" id="fullname" name="fullname" placeholder="Enter full name"
+                        required="true">
                 </div>
                 <div class="productBoxItem">
                     <label class="title" for="name">Email:</label>
-                    <input class="inputElement" type="email" id="email" name="email" placeholder="Enter email" required="true">
+                    <input class="inputElement" type="email" id="email" name="email" placeholder="Enter email"
+                        required="true">
                 </div>
                 <div class="productBoxItem">
                     <label class="title" for="name">Mobile Number:</label>
-                    <input class="inputElement" type="tel" id="mobilenumber" name="mobilenumber" placeholder="Enter mobile number" required="true">
+                    <input class="inputElement" type="tel" id="mobilenumber" name="mobilenumber"
+                        placeholder="Enter mobile number" required="true" pattern="^\+?[0-9]{10,15}$">
                 </div>
                 <div class="productBoxItem">
                     <label class="title" for="name">Pickup Date:</label>
-                    <input class="inputElement" type="date" id="pickupdate" name="pickupdate" placeholder="Enter the date when you want the car" required="true">
+                    <input class="inputElement" type="date" id="pickupdate" name="pickupdate"
+                        placeholder="Enter the date when you want the car" required="true">
                 </div>
                 <div class="productBoxItem">
                     <label class="title" for="price">Pickup Time:</label>
-                    <input class="inputElement" type="time" id="pickuptime" name="pickuptime" placeholder="Enter time" required="true">
+                    <input class="inputElement" type="time" id="pickuptime" name="pickuptime" placeholder="Enter time"
+                        required="true">
                 </div>
                 <div class="productBoxItem">
                     <label class="title" for="price">Dropoff Time:</label>
-                    <input class="inputElement" type="time" id="dropofftime" name="dropofftime" placeholder="Enter time" required="true">
+                    <input class="inputElement" type="time" id="dropofftime" name="dropofftime" placeholder="Enter time"
+                        required="true">
                 </div>
                 <div class="productBoxItem">
                     <label class="title" for="price">Total Price:</label>
-                    <input class="inputElement" type="number" id="totalprice" name="totalprice">
+                    <input class="inputElement" type="number" id="totalprice" name="totalprice" readonly>
                 </div>
-                 <div class="productBtn">
+                <div class="productBtn">
                     <button id="priceBtn">Total Price</button>
                 </div>
                 <div class="productBtn">
-                    <button id="addBtn" type="submit"><a href="/bookingsucessful?id={{vehicle._id}}">Pay Now</a></button>
+                    <button id="addBtn" type="submit">Pay Now</button>
                 </div>
-               
+                <input class="inputElement" type="hidden" id="vehicleid" name="vehicleid" value="{{vehicle._id}}">
                 <input class="inputElement" type="hidden" id="totalHours" name="totalHours">
             </div>
         </form>
         <div id="result"></div>
+        <button class="logoutBtn">
+            <a href="/logout">Logout</a>
+        </button>
     </div>
     <script>
-        let totalhours=document.querySelector('#totalHours');
-        let bookBtn=document.querySelector('.bookBtn');
-        let priceBtn=document.querySelector('#priceBtn');
-        let booknowform=document.querySelector('.booknowform');
-        let carCard=document.querySelector('#carCard');
-        bookBtn.addEventListener('click',(event)=>{
+        let totalhours = document.querySelector('#totalHours');
+        let bookBtn = document.querySelector('.bookBtn');
+        let priceBtn = document.querySelector('#priceBtn');
+        let booknowform = document.querySelector('.booknowform');
+        let carCard = document.querySelector('#carCard');
+        bookBtn.addEventListener('click', (event) => {
             event.preventDefault();
-            carCard.style.display="none";
-            booknowform.style.display="block";
+            carCard.style.display = "none";
+            booknowform.style.display = "block";
         })
-
-
-
-
-        let btn=document.querySelector('#addBtn');
-        let totalprice=document.querySelector('#totalprice');
-        let priceperhour={{vehicle.price}};
-        btn.addEventListener('click',calculateDuration);
-        function calculateDuration(event){
+        let btn = document.querySelector('#addBtn');
+        let totalprice = document.querySelector('#totalprice');
+        let priceperhour = {{ vehicle.price }};
+        priceBtn.addEventListener('click', calculateDuration);
+        function calculateDuration(event) {
             event.preventDefault();
             let pickuptime = document.querySelector('#pickuptime').value;
             let dropofftime = document.querySelector('#dropofftime').value;
@@ -121,9 +126,9 @@
             if (duration < 0) duration += 24 * 60;
             const hours = Math.floor(duration / 60);
             const minutes = duration % 60;
-            const totalhours=hours+(minutes/60);
-            totalprice.value=totalhours*priceperhour;
-            totalHours.value=totalhours;
+            const totalhours = hours + (minutes / 60);
+            totalprice.value = (totalhours * priceperhour).toFixed(0);
+            totalHours.value = totalhours;
         }
     </script>
 </body>

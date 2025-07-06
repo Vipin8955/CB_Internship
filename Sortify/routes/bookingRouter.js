@@ -1,8 +1,8 @@
 const express=require('express');
 const router=express.Router();
-const {handleBooking}=require('../controllers/booking.js');
+const {handleBooking,getMyBookings}=require('../controllers/booking.js');
 
 
-router.get('/',handleBooking);
-
+router.post('/',handleBooking);
+router.get('/mybookings',getMyBookings);
 module.exports=router;

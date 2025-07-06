@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    flex-direction: column;
+    row-gap: 50px;
+}
+.container p{
+    font-size: 24px;
+}
