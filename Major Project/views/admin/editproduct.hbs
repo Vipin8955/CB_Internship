@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/addproduct.css">
+
+</head>
+
+<body>
+    {{>navbar isAdmin=isAdmin}}
+    <div class="container">
+        <form action="/admin/editproduct" method="post">
+            <div class="productBox">
+                <img src="{{product.imageUrl}}" style="width: 300px;">
+                <div class="productBoxItem">
+                    <label class="title" for="name">Name:</label>
+                    <input class="inputElement" type="text" value="{{product.name}}" placeholder="Enter Name" id="name" name="name"><br>
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="price">Price:</label>
+                    <input class="inputElement" type="text" value="{{product.price}}" placeholder="Enter Price" id="price" name="price"><br>
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="img">ImageUrl:</label>
+                    <input class="inputElement" type="text" value="{{product.imageUrl}}" placeholder="Enter Image Url" id="img" name="imageUrl"><br>
+                </div>
+                <div class="productBoxItem">
+                    <label class="title" for="description">Description:</label>
+                    {{#each product.description as |description|}}
+                        <textarea name="description" class="inputElement" rows="5" cols="20" 
+                        id="description">{{description}}</textarea><br>
+                    {{/each}}
+                </div>
+                <input type="hidden" name="id" value="{{product._id}}">
+                <div class="productBtn">
+                    <button type="submit">Update Product</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

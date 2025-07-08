@@ -77,3 +77,15 @@ td:nth-child(2){
 .bookBtn a{
     text-decoration: none;
 }
+
+.searchBar {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

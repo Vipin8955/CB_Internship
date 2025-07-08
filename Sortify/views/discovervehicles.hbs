@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/discovervehicles.css">
 </head>
+
 <body>
     {{>navbar isAdmin=isAdmin}}
     <div class="container">
+        <div class="searchBar">
+            <input type="text" id="searchInput" placeholder="Search cars by name..." />
+        </div>
+
         <div class="carscontainer">
             {{#each vehicles}}
             <div class="carBox">
@@ -58,18 +64,26 @@
         <a href="/logout">Logout</a>
     </button>
     <script>
-        let carBoxes = document.querySelectorAll('.carBox');
+        const carBoxes = document.querySelectorAll('.carBox');
         carBoxes.forEach((carBox) => {
             let availability = carBox.querySelector('.availability');
             let bookBtn = carBox.querySelector('.bookBtn a');
             if (availability.value === 'true')
                 bookBtn.style.color = "green";
-            else
-            {
+            else {
                 bookBtn.style.color = "red";
-                bookBtn.style.pointerEvents="none";
+                bookBtn.style.pointerEvents = "none";
             }
-               
+
+        });
+        const searchInput=document.getElementById("searchInput");
+        searchInput.addEventListener("input",()=>{
+            const searchvalue=searchInput.value.toLowerCase();
+            carBoxes.forEach(box=>
+            {
+                const name=box.querySelector("td:nth-child(2)").innerText.toLowerCase();
+                box.style.display=name.includes(searchvalue)?"block":"none";
+            });
         });
     </script>
 </body>
