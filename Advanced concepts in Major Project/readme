@@ -1,0 +1,5 @@
+admin se koi page render karte waqt hi isAdmin:true bheja gaya
+hai ab har jagah partial use karte waqt we are creating a key
+isAdmin =isAdmin and initialising it with the value passed 
+from the admin isAdmin=true hua to if wali condition chalegi
+or admin options visible honge nmavbar mai 

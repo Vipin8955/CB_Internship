@@ -1,0 +1,25 @@
+<nav class="navBar">
+        <div class="navItem">
+            <img class="navImg" src="/images/sortifyimg.png">
+            <a href="" class="navLink">Home</a>
+            <a href="/shop/products" class="navLink">Products</a>
+            <a href="/shop/cart" class="navLink">
+                <span class="cartName">
+                    Cart
+                    {{#if this.cartCount}}
+                        <div class="cartCount">{{this.cartCount}}</div>
+                    {{else}}
+                        <div class="cartCount"></div>
+                    {{/if}}
+                </span>
+            </a>
+            <a href="/profile" class="navLink">Profile</a>
+            {{#if this.isAdmin}}
+                <a href="/admin/add-product" class="navLink">Add Product</a>
+                <a href="/admin/products" class="navLink">Admin Products</a>                
+            {{/if}}
+        </div>
+        <div class="navItem">
+            <input type="text" placeholder="Search for Products and more">
+        </div>
+</nav>

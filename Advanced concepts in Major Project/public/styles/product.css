@@ -1,0 +1,174 @@
+.productDetails{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container
+{
+    border: none;
+}
+.productItem{
+    /* display: flex; */
+    width: 100%;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+    padding-bottom: 20px;
+}
+.productItem::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.productItem:last-child{
+    border-bottom: none;
+}
+.image{
+    height: 300px;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    /* background-position: center; */
+    float: left;
+}
+.info{
+    /* flex-grow: 1; */
+    float: right;
+    display: flex;
+    width: 70%;
+}
+.productInfo{
+    flex-grow: 4; 
+    padding: 10px;
+    padding-left: 20px;
+}
+.priceInfo{
+    flex-grow: 1;
+}
+.price{
+    font-size: 20px;
+    font-weight: 700;
+}
+.btnGroup{
+    display: flex;
+}
+.btn{
+    flex-grow: 1;
+    background-color: rebeccapurple;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+    
+}
+.productInfoLink:link,
+.productInfoLink:visited{
+    text-decoration: none;
+    color: black;
+}
+.productInfoLink:hover .name{
+    color: blue;
+}
+
+.impDetails{
+    /* border: 1px solid black; */
+    padding-top: 10px;
+
+}
+.reviews{
+    width: 70%;
+    float: right;
+    /* border: 1px solid red; */
+    position: relative;
+}
+.payment{
+    width: 25%;
+    float: left;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+}
+.buynowBtn,.addtocartBtn{
+    width: 40%;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+.buynowBtn{
+    background-color:orange;
+}
+.addtocartBtn{
+    background-color: rgb(43, 43, 122);
+}
+.hide{
+    display: none;
+}
+.writeReview{
+    font-size: 16px;
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    border: 0px;
+    cursor: pointer;
+    background-color: rgba(15,106,209,0.911);
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px;
+}
+.submitReviewBtn,.deleteReviewBtn{
+    font-size: 16px;
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    border: 0px;
+    cursor: pointer;
+    background-color: rgba(15,106,209,0.911);
+}
+.deleteReviewBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(199, 149, 55);
+}
+.deleteReviewBtn a{
+    color: white;
+    text-decoration: none;
+}
+.deleteReviewBtn a:hover{
+    cursor: pointer;
+}
+.deleteReviewBtn a:link,.deleteReviewBtn a:visited{
+    color: white;
+    text-decoration: none;
+}
+.title,.description{
+    font-size: 20px;
+    width: 40%;
+    padding: 4px;
+    margin: 5px;
+}
+.reviewListItem{
+    font-size: 24px;
+    padding: 4px;
+    margin: 5px;
+    width: 80%;
+    list-style: none;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+.reviewTitle{
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration:underline;
+}
+.reviewDescription{
+    font-size: 18px;
+    font-weight: 500;
+}

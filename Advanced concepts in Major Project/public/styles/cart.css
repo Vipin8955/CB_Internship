@@ -1,0 +1,79 @@
+.cartItems{
+    width:100%;
+    border: 1px solid black;
+}
+.newCartItem::after{
+    content: "";
+    display: table;
+    clear: both;
+
+}
+.newCartItem{
+    margin: 10px 0;
+    padding: 10px;
+}
+.btnGrp{
+    float: left;
+    width: 30%;
+}
+.itemDetails{
+    float: right;
+    width: 65%;
+}
+.image{
+    width: 80px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.name{
+    font-size: 18px;
+    font-weight: 700;
+}
+.totalPrice{
+    width: 200px;
+    margin: auto;
+}
+.priceName,.priceValue{
+    font-weight: 800;
+    font-size: 20px;
+}
+.deleteBtn{
+    font-size: 18px;
+    border: 0px;
+    padding: 5px;
+}
+.deleteBtn:hover{
+    cursor: pointer;
+}
+.payment{
+    font-size: 18px;
+    border: 0px;
+    padding: 5px;
+    background-color: rebeccapurple;
+    color: white;
+} 
+.payment:hover{
+    cursor: pointer;
+}
+.updateQty{
+    font-size: 18px;
+    border: 0px;
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rebeccapurple;
+    color: white;
+}
+.updateQty:hover{
+    cursor: pointer;
+}
+.increaseQty,.decreaseQty{
+    border: 0px;
+    background-color: transparent;
+}
