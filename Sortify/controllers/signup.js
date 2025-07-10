@@ -8,7 +8,6 @@ async function handlePostSignup(req, res, next) {
     const { name, password } = req.body;
     try {
         let user = await USER.findOne({ name });
-
         if (!user) {
             try {
                 const hash = await bcrypt.hash(password, saltRounds); 

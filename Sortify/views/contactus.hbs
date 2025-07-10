@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/contactus.css">
+{{>navbar}}
+<div class="container">
+    <h1>Contact Us</h1>
+
+    {{#if success}}
+    <p style="color: green;">✅ Your message was sent successfully!</p>
+    {{/if}}
+
+    {{#if error}}
+    <p style="color: red;">❌ Something went wrong. Please try again later.</p>
+    {{/if}}
+
+    <form action="/contact" method="post">
+        <div class="formContent">
+            <div class="inputBox">
+                <label for="name">Name:</label>
+                <input name="name" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="inputBox">
+                <label for="email">Email:</label>
+                <input name="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="inputBox">
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" placeholder="Write your message..." required></textarea>
+            </div>
+        </div>
+        <button type="submit" class="submitBtn">Submit</button>
+    </form>
+</div>

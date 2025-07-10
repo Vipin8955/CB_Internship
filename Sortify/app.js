@@ -36,7 +36,7 @@ app.use('/signup',require('./routes/signupRouter'));
 app.use('/logout',staticRouter)
 app.use('/profile',isAuthenticated,require('./routes/profileRouter'));
 app.use('/booking',isAuthenticated,require('./routes/bookingRouter.js'));
-app.use('/admin',isAuthenticated,require('./routes/adminRouter'));
+app.use('/admin',isAuthenticated,require('./routes/adminRouter')); 
 mongoose.connect(process.env.DB_PATH).then(()=>{
   app.listen(process.env.PORT,()=>{
     console.log("Server is running");

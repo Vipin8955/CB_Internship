@@ -38,69 +38,6 @@ body {
     color: white;
     font-size: 24px;
 }
-.cars {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-.car-box {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    text-align: left;
-    position: relative;
-}
-.car-box img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 15px;
-}
-.car-info {
-    padding: 10px 0;
-}
-.car-info .price {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-}
-.car-info .discount {
-    font-size: 14px;
-    color: #ff6a00;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.car-info h4 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-}
-.car-info p {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #555;
-}
-.car-info .available {
-    font-weight: bold;
-    color: #28a745;
-}
-.book-now {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 20px;
-}
-.book-now.orange {
-    background-color: #ff6a00;
-}
 .why-choose-us {
     padding: 50px 0;
     background-color: #fff;
@@ -139,12 +76,7 @@ body {
     width: 200px;
     z-index: 1;
 }
-.car-box img {
-    width: 100%;           
-    height: 180px;        
-    object-fit: cover;     
-    border-radius: 10px;   
-}
+
 
 
 

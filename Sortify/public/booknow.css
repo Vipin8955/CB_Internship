@@ -11,9 +11,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-.carBox{
-    width: 40%;
-}
 .booknowform{
     display: none;
 }

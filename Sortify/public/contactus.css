@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(238, 238, 238);
+}
+.container{
+    height: 500px;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+form{
+    /* border: 1px solid red; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 2px 3px 3px 1px gray;
+
+}
+.submitBtn{
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 150px;
+}
+.formContent{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    
+}
+.inputBox{
+    width: 100%;
+    /* border: 1px solid green; */
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid gainsboro;
+}
+.inputBox input,textarea{
+    all: unset;
+    border: 1px solid gray;
+    width: 60%;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+}
+label{
+   display: flex;
+   font-size: 24px;
+   align-items: center;
+   color: black;
+   font-weight: 500;
+}
+textarea{
+    resize: horizontal;
+}
