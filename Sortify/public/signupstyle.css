@@ -1,103 +1,123 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.profileHeading,
-.loginHeading,
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+}
+.mainContainer {
+  padding-top: 60px;
+  text-align: center;
+}
+.flashMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 40%;
+  margin: 20px auto 30px auto;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
 .signupHeading {
-    color: rgb(68, 68, 156);
+  font-size: 2.2rem;
+  color: rgb(68, 68, 156);
+  margin-bottom: 10px;
 }
-
 .signup {
-    display: flex;
-    width: 800px;
-    margin: 200px auto;
-    align-items: center;
+  display: flex;
+  width: 800px;
+  margin: 30px auto;
+  align-items: center;
 }
-
 .signupItem {
-    width: 50%;
+  width: 50%;
+}
+.signupForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.signupBtn {
-    background-color: #1877f2;
-    border: 0px;
-    color: white;
-    width: 100%;
+.signupCreds {
+  width: 300px;
 }
-
-.loginBtn {
-    background-color: #42b72a;
-    border: 0px;
-    color: white;
-    width: 70%;
-    margin-top: 20px;
-}
-
-.loginBtn a:link,
-.loginBtn a:visited {
-    color: white;
-    text-decoration: none;
-}
-
-.loginDetails {
-    display: flex;
-    justify-content: center;
-}
-
 .signupUsername,
 .signupPassword,
 .signupBtn,
 .loginBtn {
-    font-size: 24px;
-    padding: 5px;
-    border-radius: 4px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
 }
-
-.loginBtn {
-    margin-bottom: 20px;
-}
-
 .signupUsername,
 .signupPassword {
-    width: 95%;
-    margin: 10px 0;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #ccc;
 }
-
-.signupForm,
-.login {
-    height: 50%;
-}
-
 .signupBtn {
-    margin-bottom: 20px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
 }
-
-.signupForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.loginBtn {
+  background-color: #42b72a;
+  border: none;
+  color: white;
+  width: 70%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
-
-.signupCreds {
-    width: 300px;
+.loginBtn a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
 }
-
+.loginBtn:hover,
+.signupBtn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.loginDetails {
+  display: flex;
+  justify-content: center;
+}
+.horizontalRule {
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+.signupOptions {
+  border: 1px solid #ccc;
+  width: 100%;
+  align-content: space-around;
+  padding: 30px;
+  box-shadow: 3px 3px 10px black;
+}
 .navItem1,
 .navItem2 {
-    height: 300px;
+  height: 300px;
 }
-
-.signupOptions {
-    border: 1px solid #ccc;
+@media screen and (max-width: 768px) {
+  .signup {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 40px;
+  }
+  .signupItem {
     width: 100%;
-    align-content: space-around;
-    padding: 30px;
-    box-shadow: 3px 3px 10px black;
+  }
+  .signupHeading {
+    font-size: 1.6rem;
+  }
+  .flashMessage {
+    width: 90%;
+  }
 }
-
-.horizontalRule {
-    border-top: 1px solid #ccc;
-}
-

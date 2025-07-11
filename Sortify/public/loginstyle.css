@@ -1,108 +1,130 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.profileHeading,
-.signupHeading,
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+}
+.mainContainer {
+  padding-top: 60px;
+  text-align: center;
+}
+.flashMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 40%;
+  margin: 20px auto 30px auto;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
 .loginHeading {
-    color: rgb(68, 68, 156);
+  font-size: 2.2rem;
+  color: rgb(68, 68, 156);
+  margin-bottom: 10px;
 }
-
 .login {
-    display: flex;
-    width: 800px;
-    margin: 200px auto;
-    /* border: 1px solid black; */
-    align-items: center;
+  display: flex;
+  width: 800px;
+  margin: 30px auto;
+  align-items: center;
 }
-
 .loginItem {
-    width: 50%;
-    /* border: 1px solid green; */
+  width: 50%;
 }
-
-.signupBtn {
-    background-color: #42b72a;
-    border-radius: 1px;
-    border: 0px;
-    color: white;
-    width: 70%;
-    margin-top: 20px;
+.loginForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.signupBtn a:link,.loginBtn a:link,
-.signupBtn a:visited,.loginupBtn a:visited{
-    color: white;
-    text-decoration: none;
+.loginCreds {
+  width: 300px;
 }
-
-.signupDetails {
-    display: flex;
-    justify-content: center;
-}
-
 .loginUsername,
 .loginPassword,
 .loginBtn,
 .signupBtn {
-    font-size: 24px;
-    padding: 5px;
-    border-radius: 4px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
 }
-
-.loginBtn {
-    margin-bottom: 20px;
-}
-
 .loginUsername,
 .loginPassword {
-    width: 95%;
-    margin: 10px 0;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #ccc;
 }
-
 .loginBtn {
-    background-color: #1877f2;
-    border-radius: 1px;
-    border: 0px;
-    color: white;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
 }
-
 .loginBtn:hover,
 .signupBtn:hover {
-    cursor: pointer;
+  cursor: pointer;
+  opacity: 0.9;
 }
-
-.loginForm {
-    display: flex;
-    /* border: 1px solid red; */
-    align-items: center;
-    justify-content: center;
+.signup {
+  height: 50%;
 }
-
-.loginCreds {
-    width: 300px;
+.signupDetails {
+  display: flex;
+  justify-content: center;
 }
-
+.signupBtn {
+  background-color: #42b72a;
+  border: none;
+  color: white;
+  width: 70%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+.signupBtn a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+.horizontalRule {
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+.loginOptions {
+  border: 1px solid #ccc;
+  width: 100%;
+  align-content: space-around;
+  padding: 30px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Added this */
+  border-radius: 6px;
+  background-color: white;
+}
 .navItem1,
 .navItem2 {
-    height: 300px;
+  height: 300px;
 }
+@media screen and (max-width: 768px) {
+  .login {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 40px;
+  }
 
-.loginOptions {
-    border: 1px solid #ccc;
+  .loginItem {
     width: 100%;
-    align-content: space-around;
-    padding: 30px;
-    box-shadow: 3px 3px 10px black;
-}
+  }
 
-.horizontalRule {
-    border-top: 1px solid #ccc;
-}
+  .loginHeading {
+    font-size: 1.6rem;
+  }
 
-.loginForm,
-.signup {
-    /* border: 1px solid black; */
-    height: 50%;
+  .flashMessage {
+    width: 90%;
+  }
 }

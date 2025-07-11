@@ -8,7 +8,6 @@ body{
 }
 .container{
     height: 500px;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -17,13 +16,11 @@ body{
     
 }
 form{
-    /* border: 1px solid red; */
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid gray;
     border-radius: 8px;
     padding: 40px;
     background-color: white;
@@ -36,15 +33,15 @@ form{
     border-radius: 5px;
     border: 1px solid gray;
     width: 150px;
+    background-color: rgb(21, 165, 21);
+    color: white;
 }
 .formContent{
-    /* border: 1px solid yellow; */
     width: 100%;
     
 }
 .inputBox{
     width: 100%;
-    /* border: 1px solid green; */
     display: flex;
     margin: 10px;
     justify-content: space-between;

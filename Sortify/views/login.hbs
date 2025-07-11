@@ -2,51 +2,55 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
-  <link rel="stylesheet" href="loginstyle.css">
+  <link rel="stylesheet" href="/loginstyle.css" />
 </head>
 
 <body>
 
-  {{#if msg}}
-  <div class="flashMessage">
-    {{msg}}
-  </div>
-  {{/if}}
-  <h1 class="loginHeading">Welcome to Login Page</h1>
-  <div class="login">
+  <div class="mainContainer">
+    <h1 class="loginHeading">Welcome to Login Page</h1>
 
-    <div class="loginItem navItem1">
+    {{#if msg}}
+    <div class="flashMessage">
+      {{msg}}
     </div>
+    {{/if}}
 
-    <div class="loginItem navItem2">
-      <div class="loginOptions">
-        <form class="loginForm" action="/login" method="POST">
-          <div class="loginCreds">
-            <input class="loginUsername" type="text" placeholder="Enter Username" name="name" />
-            <input class="loginPassword" type="text" placeholder="Enter Password" name="password" />
-            <button class="loginBtn" type="submit">Login</button>
-          </div>
-        </form>
+    <div class="login">
+      <div class="loginItem navItem1">
+        <!-- Optional: Add an image or illustration -->
+      </div>
 
-        <div class="signup">
-          <hr class="horizontalRule" />
-          <div class="signupDetails">
-            <button class="signupBtn">
-              <a href="/signup">Signup</a>
-            </button>
-          </div>
-          <div class="signupDetails">
-            <button class="signupBtn">
-              <a href="/login/facebook">Fb-Login</a>
-            </button>
-          </div>
-          <div class="signupDetails">
-            <button class="signupBtn">
-              <a href="/login/google">Google-Login</a>
-            </button>
+      <div class="loginItem navItem2">
+        <div class="loginOptions">
+          <form class="loginForm" action="/login" method="POST">
+            <div class="loginCreds">
+              <input class="loginUsername" type="text" placeholder="Enter Username" name="name" required />
+              <input class="loginPassword" type="password" placeholder="Enter Password" name="password" required />
+              <button class="loginBtn" type="submit">Login</button>
+            </div>
+          </form>
+
+          <div class="signup">
+            <hr class="horizontalRule" />
+            <div class="signupDetails">
+              <button class="signupBtn">
+                <a href="/signup">Signup</a>
+              </button>
+            </div>
+            <div class="signupDetails">
+              <button class="signupBtn">
+                <a href="/login/facebook">Fb-Login</a>
+              </button>
+            </div>
+            <div class="signupDetails">
+              <button class="signupBtn">
+                <a href="/login/google">Google-Login</a>
+              </button>
+            </div>
           </div>
         </div>
       </div>
