@@ -7,8 +7,9 @@ async function handleGetLogin(req,res){
     if(req.user){
        return res.redirect('/home');
     }
+    const error=req.flash('error');
     res.render('login',{
-        msg:req.flash('msg')
+        msg:error[0]
     });
  }
 module.exports={

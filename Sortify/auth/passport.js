@@ -8,7 +8,7 @@ passport.use(new LocalStrategy({usernameField:'name',passwordField:'password'},
     async function(username,password,done){
         try{
             let user=await User.findOne({username:username})
-            if(!user){return done(null,false);}
+            if(!user){return done(null,false,{ message: 'No user found' });}
             // if(!user.verifyPassword(password)){return done(null,false)}
             return done(null,user);
         }catch(err){
