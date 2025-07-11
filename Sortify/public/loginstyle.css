@@ -32,6 +32,7 @@ body {
   width: 800px;
   margin: 30px auto;
   align-items: center;
+  justify-content: center;
 }
 .loginItem {
   width: 50%;
@@ -103,7 +104,7 @@ body {
   padding: 30px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Added this */
   border-radius: 6px;
-  background-color: white;
+ 
 }
 .navItem1,
 .navItem2 {
