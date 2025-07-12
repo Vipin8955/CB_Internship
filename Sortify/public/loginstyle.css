@@ -1,131 +1,88 @@
-* {
-  margin: 0;
+*{
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f9;
-}
-.mainContainer {
-  padding-top: 60px;
-  text-align: center;
-}
-.flashMessage {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 10px 15px;
-  border-radius: 4px;
-  width: 40%;
-  margin: 20px auto 30px auto;
-  text-align: center;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-}
-.loginHeading {
-  font-size: 2.2rem;
-  color: rgb(68, 68, 156);
-  margin-bottom: 10px;
-}
-.login {
+body{
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  width: 800px;
-  margin: 30px auto;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
+  background-image: url('/images/car-rental.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.loginItem {
-  width: 50%;
-}
-.loginForm {
+.mainContainer{
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-}
-.loginCreds {
-  width: 300px;
-}
-.loginUsername,
-.loginPassword,
-.loginBtn,
-.signupBtn {
-  font-size: 20px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
   padding: 10px;
-  border-radius: 4px;
+  height: 70%;
+  width: 27%;
+  position: relative;
+  right: 90px;
+  box-shadow: 1px 1px 1px 1px gray;
 }
-.loginUsername,
-.loginPassword {
+.loginHeading{
+  color: rgb(15, 15, 232);
+  font-weight: 900;
+   text-shadow: 1px 1px black;
+}
+.secondaryContainer{
+  margin:20px;
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+hr{
   width: 100%;
-  margin: 10px 0;
-  border: 1px solid #ccc;
 }
-.loginBtn {
-  background-color: #1877f2;
-  color: white;
-  border: none;
-  width: 100%;
-  margin-bottom: 20px;
+.loginCreds{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  gap: 10px;
 }
-.loginBtn:hover,
-.signupBtn:hover {
+.loginCreds input{
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+.loginOptions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginOptions button{
+  background-color: transparent;
   cursor: pointer;
-  opacity: 0.9;
 }
-.signup {
-  height: 50%;
-}
-.signupDetails {
+.navLink{
+  width: 100%;
+  margin: 10px;
+  border: 1px solid gray;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 1px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.signupBtn {
-  background-color: #42b72a;
-  border: none;
-  color: white;
-  width: 70%;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-.signupBtn a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-}
-.horizontalRule {
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-}
-.loginOptions {
-  border: 1px solid #ccc;
-  width: 100%;
-  align-content: space-around;
-  padding: 30px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Added this */
-  border-radius: 6px;
- 
-}
-.navItem1,
-.navItem2 {
-  height: 300px;
-}
-@media screen and (max-width: 768px) {
-  .login {
-    flex-direction: column;
-    width: 90%;
-    margin-top: 40px;
-  }
 
-  .loginItem {
-    width: 100%;
-  }
-
-  .loginHeading {
-    font-size: 1.6rem;
-  }
-
-  .flashMessage {
-    width: 90%;
-  }
-}

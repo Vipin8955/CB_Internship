@@ -12,6 +12,9 @@
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
     background-color: black;
+    height: 10%;
+    display: flex;
+    align-items: center;
 }
 .navItem{
     display: flex;
@@ -23,6 +26,11 @@
 .navLink{
     margin: 0 10px;
     font-size: 24px;
+    padding: 5px;
+}
+.navLink:hover{
+    border: 1px solid white;
+    border-radius: 5px;
 }
 .navLink:link,
 .navLink:visited{

@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SignUp</title>
-  <link rel="stylesheet" href="/signupstyle.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/signupstyle.css">
 </head>
 <body>
-
-  <div class="mainContainer">
-    <h1 class="signupHeading">Welcome to SignUp Page</h1>
-
-    {{#if msg}}
-      <div class="flashMessage">
-        {{msg}}
-      </div>
-    {{/if}}
-
-    <div class="signup">
-
-      <div class="signupItem navItem2">
-        <div class="signupOptions">
-          <form class="signupForm" method="post" action="/signup">
-            <div class="signupCreds">
-              <input class="signupUsername" type="text" name="name" placeholder="Enter full name" required />
-              <input class="signupPassword" type="password" name="password" placeholder="Enter password" required />
-              <button class="signupBtn" type="submit">Sign Up</button>
-            </div>
-          </form>
-
-          <div class="login">
-            <hr class="horizontalRule" />
-            <div class="loginDetails">
-              <button class="loginBtn">
-                <a href="/login">Login</a>
-              </button>
-            </div>
-          </div>
+    <div class="mainContainer">
+        <h1 class="signupHeading">Welcome to SignUp Page</h1>
+        {{#if msg}}
+        <div class="flashMessage">
+            {{msg}}
         </div>
-      </div>
+        {{/if}}
+        <div class="secondaryContainer">
+            <form class="signupCreds" method="post" action="/signup">
+                <input type="text" placeholder="Enter full name" name="name" required>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <button type="submit" class="navLink">SignUp</button>
+            </form>
+            <div class="loginOptions">
+                <a class="navLink" href="/login">Login</a>
+            </div>
+        </div>
     </div>
-  </div>
-
 </body>
 </html>

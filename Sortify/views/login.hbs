@@ -2,57 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="/loginstyle.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/loginstyle.css">
 </head>
 
 <body>
-
-  <div class="mainContainer">
-    <h1 class="loginHeading">Welcome to Login Page</h1>
-
-    {{#if msg}}
-    <div class="flashMessage">
-      {{msg}}
-    </div>
-    {{/if}}
-
-    <div class="login">
-      <div class="loginItem navItem2">
-        <div class="loginOptions">
-          <form class="loginForm" action="/login" method="POST">
-            <div class="loginCreds">
-              <input class="loginUsername" type="text" placeholder="Enter Username" name="name" required />
-              <input class="loginPassword" type="password" placeholder="Enter Password" name="password" required />
-              <button class="loginBtn" type="submit">Login</button>
-            </div>
-          </form>
-
-          <div class="signup">
-            <hr class="horizontalRule" />
-            <div class="signupDetails">
-              <button class="signupBtn">
-                <a href="/signup">Signup</a>
-              </button>
-            </div>
-            <div class="signupDetails">
-              <button class="signupBtn">
-                <a href="/login/facebook">Fb-Login</a>
-              </button>
-            </div>
-            <div class="signupDetails">
-              <button class="signupBtn">
-                <a href="/login/google">Google-Login</a>
-              </button>
-            </div>
-          </div>
+    <div class="mainContainer">
+        <h1 class="loginHeading">Welcome to Login Page</h1>
+        {{#if msg}}
+        <div class="flashMessage">
+            {{msg}}
         </div>
-      </div>
+        {{/if}}
+        <div class="secondaryContainer">
+            <form class="loginCreds" method="post" action="/login">
+                <input type="text" placeholder="Enter Username" name="name" required>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <button type="submit" class="navLink">Login</button>
+            </form>
+            <hr>
+            <div class="loginOptions">
+              <a class="navLink" href="/signup">SignUp</a>
+              <a class="navLink" href="/login/facebook"><img height="35px" width="35px" src="/images/facebook.webp"> Facebook-Login</a>
+              <a class="navLink" href="/login/google"><img height="25px" width="35px" src="/images/Google-Symbol.png"> Google-Login</a>
+            </div>
+        </div>
     </div>
-  </div>
-
 </body>
 
 </html>

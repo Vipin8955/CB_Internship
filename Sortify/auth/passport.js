@@ -1,6 +1,7 @@
 // All the strategies will be made here for that we have to require passport
 const passport=require('passport');
 const User=require('../models/user');
+const bcrypt = require('bcrypt');
 const LocalStrategy=require('passport-local');
 const FacebookStrategy=require('passport-facebook');
 const GoogleStrategy = require('passport-google-oauth20');
@@ -9,7 +10,11 @@ passport.use(new LocalStrategy({usernameField:'name',passwordField:'password'},
         try{
             let user=await User.findOne({username:username})
             if(!user){return done(null,false,{ message: 'No user found' });}
-            // if(!user.verifyPassword(password)){return done(null,false)}
+            const verified=await bcrypt.compare(password,user.password);
+            if(!verified)
+            {
+                return done(null,false,{ message: 'Password does not match' });
+            }
             return done(null,user);
         }catch(err){
             return done(err)
