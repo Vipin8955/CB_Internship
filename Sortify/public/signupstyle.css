@@ -9,10 +9,21 @@ body{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-image: url('/images/car-rental.jpg');
+  background-image: url('/images/img4.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(6px);
+  z-index: 0;
 }
 .flashMessage{
   font-size: 20px;
@@ -31,9 +42,11 @@ body{
   position: relative;
   right: 90px;
   box-shadow: 1px 1px 1px 1px gray;
+  position: relative;
+  z-index:1;
 }
 .signupHeading{
-  color: rgb(15, 15, 232);
+  color: rgb(63, 63, 199);
   font-weight: 900;
    text-shadow: 1px 1px black;
 }
