@@ -1,7 +1,9 @@
 const baseModule = require('hbs');
 const Vehicle=require('../models/vehicle');
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY.startsWith('SG.')) {
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+}
 
 
 async function getHome(req,res){
@@ -55,8 +57,12 @@ async function postContactUs(req,res,next){
         html: `<strong>Hi ${name},</strong><br><br>Thank you for reaching out! We have received your message and will get back to you shortly.<br><br><strong>Your Message:</strong><br>${message}`
     };
     try {
-        await sgMail.send(adminMsg);
-        await sgMail.send(userMsg);
+        if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY.startsWith('SG.')) {
+            await sgMail.send(adminMsg);
+            await sgMail.send(userMsg);
+        } else {
+            console.log('SendGrid API key not configured, message received:', { name, email, message });
+        }
         res.render('contactus', { success: true });
     } catch (error) {
         console.error('SendGrid Error:', error);

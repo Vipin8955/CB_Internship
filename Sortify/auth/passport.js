@@ -36,8 +36,8 @@ passport.deserializeUser(async function(id,done){
 
 //FaceBook
 passport.use(new FacebookStrategy({
-    clientID:process.env.CLIENT_ID,
-    clientSecret:process.env.CLIENT_SECRET,
+    clientID: process.env.CLIENT_ID || 'dummy_facebook_client_id',
+    clientSecret: process.env.CLIENT_SECRET || 'dummy_facebook_client_secret',
     callbackURL:"http://localhost:8000/login/auth/facebook/callback"
 },async function(accessToken,refreshtoken,profile,cb){
     // User.findOrCreate({facebookId:profile.id},function(err,user){
@@ -69,8 +69,8 @@ passport.use(new FacebookStrategy({
 
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_SECRET_KEY,
+    clientID: process.env.GOOGLE_CLIENT_ID || 'dummy_google_client_id',
+    clientSecret: process.env.GOOGLE_SECRET_KEY || 'dummy_google_secret_key',
     callbackURL: "http://localhost:8000/login/auth/google/callback"
   },
   async function(accessToken,refreshtoken,profile,cb){

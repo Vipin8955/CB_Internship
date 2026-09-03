@@ -8,8 +8,9 @@ async function handleGetLogin(req,res){
        return res.redirect('/home');
     }
     const error=req.flash('error');
+    const msg=req.flash('msg');
     res.render('login',{
-        msg:error[0]
+        msg: (error && error.length > 0) ? error[0] : (msg && msg.length > 0 ? msg[0] : null)
     });
  }
 module.exports={
