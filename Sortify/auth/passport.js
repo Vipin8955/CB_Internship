@@ -38,7 +38,8 @@ passport.deserializeUser(async function(id,done){
 passport.use(new FacebookStrategy({
     clientID: process.env.CLIENT_ID || 'dummy_facebook_client_id',
     clientSecret: process.env.CLIENT_SECRET || 'dummy_facebook_client_secret',
-    callbackURL:"http://localhost:8000/login/auth/facebook/callback"
+    callbackURL: process.env.FACEBOOK_CALLBACK_URL || "/login/auth/facebook/callback",
+    proxy: true
 },async function(accessToken,refreshtoken,profile,cb){
     // User.findOrCreate({facebookId:profile.id},function(err,user){
     //     return cb(err,user);
@@ -71,7 +72,8 @@ passport.use(new FacebookStrategy({
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID || 'dummy_google_client_id',
     clientSecret: process.env.GOOGLE_SECRET_KEY || 'dummy_google_secret_key',
-    callbackURL: "http://localhost:8000/login/auth/google/callback"
+    callbackURL: process.env.GOOGLE_CALLBACK_URL || "/login/auth/google/callback",
+    proxy: true
   },
   async function(accessToken,refreshtoken,profile,cb){
     // User.findOrCreate({facebookId:profile.id},function(err,user){

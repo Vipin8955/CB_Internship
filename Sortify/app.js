@@ -18,9 +18,11 @@ const hbs = require('hbs');
 const Vehicle = require('./models/vehicle.js');
 
 app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('trust proxy', 1);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const DB_PATH = process.env.DB_PATH || 'mongodb://127.0.0.1:27017/sortify';
 const SECRET_KEY = process.env.SECRET_KEY || 'sortify_super_secret_session_key_2026';
